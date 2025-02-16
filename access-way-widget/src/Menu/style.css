@@ -194,6 +194,7 @@
 .access-way-tool-name {
   margin: 0;
   margin-top: 5px;
+  text-align: center;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -311,4 +312,14 @@
 .access-way-tools-list::-webkit-scrollbar-track-piece:start {
   background: transparent;
   margin-top: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .access-way-tools-list {
+    height: 60vh !important;
+    margin-top: 20px;
+  }
+  .move-widget-container {
+    display: none;
+  }
 }
