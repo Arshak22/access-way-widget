@@ -20,7 +20,7 @@ import HideImages from "../Tools/HideImages";
 import PauseAnimations from "../Tools/PauseAnimations";
 import MuteSounds from "../Tools/MuteSounds";
 
-export default function Menu({ closeMenu }) {
+export default function Menu({ closeMenu, initialFontSizes }) {
   const [isOversized, setIsOversized] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState("right");
   const [resetParam, setResetParam] = useState(false);
@@ -167,7 +167,7 @@ export default function Menu({ closeMenu }) {
           <Saturation reset={resetParam} />
           <HighlightLinks reset={resetParam} />
           <Cursor reset={resetParam} />
-          <BiggerText reset={resetParam} />
+          <BiggerText reset={resetParam} initialFontSizes={initialFontSizes}/>
           <AlignText reset={resetParam} />
           <TextSpacing reset={resetParam} />
           <LineHeight reset={resetParam} />
