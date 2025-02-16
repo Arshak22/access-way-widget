@@ -4,8 +4,8 @@
   left: auto;
   height: 100%;
   z-index: 99999;
-  background: #eff1f5;
-  max-width: 520px;
+  background: #e7e7e7;
+  max-width: 600px;
   width: 100%;
   box-shadow: 0 22px 110px rgb(130 138 150);
   font-family: var(--main-font);
@@ -22,7 +22,7 @@
     #0260dd,
     #0555d4,
     #0749cb,
-    #093ec2
+    var(--main-color)
   ) !important;
   color: #ffff;
 }
@@ -63,7 +63,7 @@
 }
 
 .oversize-menu-switch-section {
-  border: 2px solid #093ec2;
+  border: 2px solid var(--main-color);
   padding: 5px;
   border-radius: 50px;
 }
@@ -106,9 +106,159 @@
 }
 
 .oversize-menu-switch input:checked + .slider {
-  background-color: #093ec2;
+  background-color: var(--main-color);
 }
 
 .oversize-menu-switch input:checked + .slider:before {
   transform: translateX(40px);
+}
+
+/* Tools */
+.access-way-tools-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 3em;
+  padding-right: 10px;
+  height: 410px;
+  overflow-y: scroll;
+}
+
+.access-way-tools-list.three-column {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.access-way-tools-list.two-column {
+  grid-template-columns: 1fr 1fr;
+}
+
+.access-way-tool-section {
+  position: relative;
+  width: 85%;
+  height: 115px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  padding: 0.3125rem 0.625rem;
+  transition: all 0.3s ease;
+}
+
+.access-way-tools-list.two-column .access-way-tool-section {
+  width: 90%;
+  height: 155px;
+}
+
+.access-way-tool-icon {
+  width: 35px;
+  height: auto;
+}
+
+.access-way-tool-name {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: var(--main-font);
+}
+
+::selection {
+  background: transparent;
+  color: initial;
+}
+
+.access-way-tool-steps {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.access-way-tool-step {
+  width: 27%;
+  padding: 0 0.15625rem;
+  border-radius: 10px;
+  display: block;
+  height: 5px;
+  position: relative;
+  background: rgba(178, 210, 247, 0.3);
+}
+
+.access-way-tool-step-small {
+  width: 18%;
+}
+
+.access-way-tool-step.active-step {
+  background: var(--main-color);
+}
+
+.access-way-tools-list.two-column .access-way-tool-icon {
+  width: 50px;
+}
+
+.access-way-tools-list.two-column .access-way-tool-name {
+  font-size: 25px;
+}
+
+.access-way-tool-section:hover {
+  border: 2px solid var(--main-color);
+}
+
+.access-way-tool-section.active-tool-section {
+  border: 2px solid var(--main-color);
+}
+
+.access-way-tool-section.active-tool-section .access-way-tool-icon {
+  color: var(--main-color);
+}
+
+.access-way-checked-tool {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--main-color);
+  font-size: 20px;
+}
+
+.access-way-tools-list.two-column .access-way-checked-tool {
+  font-size: 30px;
+}
+
+/* Scrollbar styling */
+.access-way-tools-list::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+  border-radius: 20px;
+}
+
+.access-way-tools-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.access-way-tools-list::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 20px;
+  border-right: none;
+  border-left: none;
+}
+
+.access-way-tools-list::-webkit-scrollbar-thumb:hover {
+  background-color: #001f6c;
+}
+
+.access-way-tools-list::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 5px;
+}
+
+.access-way-tools-list::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 5px;
 }

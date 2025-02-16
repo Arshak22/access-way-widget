@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     const handleKeydown = (e) => {
-      if (e.ctrlKey && e.key === "u") {
+      if (e.ctrlKey && e.key === "y") {
         e.preventDefault();
         toggleMenu();
       }
@@ -30,7 +30,7 @@ function App() {
     return () => {
       window.removeEventListener("keydown", handleKeydown);
     };
-  }, [isMenuOpen]);
+  }, [toggleMenu]);
 
   return (
     <div className="App">
