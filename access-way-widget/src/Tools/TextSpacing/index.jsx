@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoCheckmarkCircle } from "react-icons/io5";
 
 import { RxLetterSpacing } from "react-icons/rx";
 
-export default function TextSpacing() {
+export default function TextSpacing({ reset }) {
   const [isChecked, setIsChecked] = useState(0);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(0);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     if (isChecked === 3) {

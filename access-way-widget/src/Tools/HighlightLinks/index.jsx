@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoCheckmarkCircle, IoLink } from "react-icons/io5";
 
-export default function HighlightLinks() {
+export default function HighlightLinks({ reset }) {
   const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(false);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     setIsChecked(!isChecked);

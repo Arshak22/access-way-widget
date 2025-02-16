@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoCheckmarkCircle } from "react-icons/io5";
 
@@ -6,8 +6,14 @@ import { PiCursorLight, PiCursorFill } from "react-icons/pi";
 import { LuTextCursorInput } from "react-icons/lu";
 import { FaICursor } from "react-icons/fa6";
 
-export default function Cursor() {
+export default function Cursor({ reset }) {
   const [isChecked, setIsChecked] = useState(0);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(0);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     if (isChecked === 3) {

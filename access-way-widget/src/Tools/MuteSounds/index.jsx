@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { IoVolumeHigh, IoVolumeMute } from "react-icons/io5";
 
-export default function MuteSounds() {
+export default function MuteSounds({ reset }) {
   const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(false);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     setIsChecked(!isChecked);

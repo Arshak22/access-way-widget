@@ -13,11 +13,11 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   useEffect(() => {
+    const toggleMenu = () => {
+      setIsMenuOpen((prev) => !prev);
+    };
+
     const handleKeydown = (e) => {
       if (e.ctrlKey && e.key === "y") {
         e.preventDefault();
@@ -30,7 +30,7 @@ function App() {
     return () => {
       window.removeEventListener("keydown", handleKeydown);
     };
-  }, [toggleMenu]);
+  }, []);
 
   return (
     <div className="App">

@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoCheckmarkCircle } from "react-icons/io5";
 
-import { FiAlignLeft, FiAlignRight, FiAlignCenter, FiAlignJustify } from "react-icons/fi";
+import {
+  FiAlignLeft,
+  FiAlignRight,
+  FiAlignCenter,
+  FiAlignJustify,
+} from "react-icons/fi";
 
-
-export default function AlignText() {
+export default function AlignText({ reset }) {
   const [isChecked, setIsChecked] = useState(0);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(0);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     if (isChecked === 4) {

@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { MdImage, MdHideImage } from "react-icons/md";
 
-export default function HideImages() {
+export default function HideImages({ reset }) {
   const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(false);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     setIsChecked(!isChecked);

@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoCheckmarkCircle } from "react-icons/io5";
 
 import { RxLineHeight } from "react-icons/rx";
 
-export default function LineHeight() {
+export default function LineHeight({ reset }) {
   const [isChecked, setIsChecked] = useState(0);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(0);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     if (isChecked === 3) {

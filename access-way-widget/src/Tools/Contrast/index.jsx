@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { IoContrast, IoInvertModeOutline } from "react-icons/io5";
 import { FaLightbulb, FaRegLightbulb } from "react-icons/fa6";
 
-export default function Contrast() {
+export default function Contrast({ reset }) {
   const [isChecked, setIsChecked] = useState(0);
+
+  useEffect(() => {
+    if (reset) {
+      setIsChecked(0);
+    }
+  }, [reset]);
 
   const handleCheckTool = () => {
     if (isChecked === 3) {
